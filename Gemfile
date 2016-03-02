@@ -9,6 +9,8 @@ gem 'hanami-model', '~> 0.5'
 gem 'haml'
 gem 'pg'
 
+gem 'pry'
+
 group :test do
   gem 'minitest'
   gem 'capybara'

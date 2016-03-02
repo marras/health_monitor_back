@@ -3,7 +3,9 @@ module Web::Controllers::Data
     include Web::Action
 
     def call(params)
-      puts params.inspect
+      data = Data.new(params)
+      puts data.inspect
+      data.save!
     end
   end
 end

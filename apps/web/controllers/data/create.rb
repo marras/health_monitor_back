@@ -1,3 +1,5 @@
+require 'controller_mixins'
+
 module Web::Controllers::Data
   class Create
     include ::ControllerMixins
@@ -29,7 +31,7 @@ module Web::Controllers::Data
     private
 
     def verify_csrf_token?
-      false
+      false # we should probably implement some signing mechanism
     end
   end
 end

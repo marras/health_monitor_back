@@ -5,10 +5,10 @@ gem 'bundler'
 gem 'rake'
 gem 'hanami',       '0.7.2'
 gem 'hanami-model', '~> 0.5'
-
-
 gem 'haml'
 gem 'pg'
+
+gem 'warden'
 
 gem 'pry'
 

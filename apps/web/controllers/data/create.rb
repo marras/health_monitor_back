@@ -11,8 +11,9 @@ module Web::Controllers::Data
 
     def call(params)
       values = params[:values]
+      user = User[params[:user]]
       values.each do |metric_name, value|
-        metric = Metric.find_or_create(name: metric_name)
+        metric = user.metrics.find_or_create(name: metric_name)
 
         point = Point.new
         point.day = Date.today

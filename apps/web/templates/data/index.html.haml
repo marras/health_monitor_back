@@ -1,8 +1,10 @@
-%h1 Your data
+%h1
+  = current_user.name
+  's data
 
 %p Here comes the chart.
 
-- metrics.each do |m|
+- current_user.metrics.each do |m|
   %p
     %b= m.name
   %p

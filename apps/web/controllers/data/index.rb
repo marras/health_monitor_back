@@ -2,7 +2,7 @@ module Web::Controllers::Data
   class Index
     include ::ControllerMixins
 
-    expose :warden
+    expose :current_user
 
     use Warden::Manager do |manager|
       manager.default_strategies :password
@@ -11,6 +11,7 @@ module Web::Controllers::Data
 
     def call(params)
       warden.authenticate!
+      @current_user = warden.user
     end
   end
 end

@@ -18,6 +18,7 @@ module Web
       #
       load_paths << [
         'controllers',
+        'models',
         'views'
       ]
 

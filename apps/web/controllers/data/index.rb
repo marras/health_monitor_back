@@ -3,7 +3,6 @@ module Web::Controllers::Data
     include Web::Action
 
     def call(params)
-      @data = Data.all
     end
   end
 end

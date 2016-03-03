@@ -1,6 +1,6 @@
 module Web::Controllers::Data
   class Index
-    include Web::Action
+    include ::ControllerMixins
 
     use Warden::Manager do |manager|
       manager.default_strategies :password
@@ -8,7 +8,7 @@ module Web::Controllers::Data
     end
 
     def call(params)
-      @_env['warden'].authenticate!
+      warden.authenticate!
     end
   end
 end

@@ -1,6 +1,6 @@
 module Web::Controllers::Home
   class Index
-    include Web::Action
+    include ::ControllerMixins
 
     def call(params)
     end

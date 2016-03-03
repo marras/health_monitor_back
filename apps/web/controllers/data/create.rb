@@ -1,6 +1,6 @@
 module Web::Controllers::Data
   class Create
-    include Web::Action
+    include ::ControllerMixins
 
     accept :json
 

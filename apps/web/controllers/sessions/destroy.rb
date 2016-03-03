@@ -1,8 +1,10 @@
 module Web::Controllers::Sessions
   class Destroy
-    include Web::Action
+    include ::ControllerMixins
 
     def call(params)
+      warden.logout
+      redirect_to '/'
     end
   end
 end

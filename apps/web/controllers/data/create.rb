@@ -17,6 +17,8 @@ module Web::Controllers::Data
         puts point.inspect
         point.save
       end
+
+      self.body = '{ "status": "ok" }'
     end
   end
 end

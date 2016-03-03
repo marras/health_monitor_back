@@ -2,8 +2,8 @@ module Web::Views::Data
   class Index
     include Web::View
 
-    def points
-      @points ||= Point.all
+    def metrics
+      @metrics ||= Metric.all
     end
   end
 end

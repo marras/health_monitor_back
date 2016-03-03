@@ -2,5 +2,9 @@
 
 %p Here comes the chart.
 
-- points.each do |d|
-  %p= d.value
+- metrics.each do |m|
+  %p
+    %b= m.name
+  %p
+    - m.points.each do |p|
+      = p.value

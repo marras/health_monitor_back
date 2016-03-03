@@ -3,8 +3,10 @@
   %head
     %title Web
     = favicon
+    = stylesheet 'chartist.min'
   %body
     .navbar
       = logout_button
 
     = yield
+    = javascript 'chartist.min', 'data'

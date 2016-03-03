@@ -4,6 +4,11 @@ module Web::Controllers::Data
 
     accept :json
 
+    use Warden::Manager do |manager|
+      manager.default_strategies :password
+      manager.failure_app = FailureApp
+    end
+
     def call(params)
       values = params[:values]
       values.each do |metric_name, value|

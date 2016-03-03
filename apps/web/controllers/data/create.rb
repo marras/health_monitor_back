@@ -11,12 +11,11 @@ module Web::Controllers::Data
 
     def call(params)
       values = params[:values]
-      user = User[params[:user]]
+      user_id = params[:user]
       values.each do |metric_name, value|
-        metric = user.metrics.find_or_create(name: metric_name)
+        metric = Metric.find_or_create(name: metric_name, user_id: user_id)
 
-        point = Point.new
-        point.day = Date.today
+        point = Point.find_or_create(metric_id: metric.id, day: Date.today)
         point.value = value.to_i
         point.metric = metric
 
@@ -25,6 +24,12 @@ module Web::Controllers::Data
       end
 
       self.body = '{ "status": "ok" }'
+    end
+
+    private
+
+    def verify_csrf_token?
+      false
     end
   end
 end

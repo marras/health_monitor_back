@@ -7,7 +7,7 @@ module Web::Views::Home
         label 'Name'
         text_field :name
         label 'Password'
-        text_field :password
+        password_field :password
 
         submit 'Log in'
       end

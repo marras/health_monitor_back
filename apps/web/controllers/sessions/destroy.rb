@@ -1,6 +1,6 @@
 module Web::Controllers::Sessions
   class Destroy
-    include ::ControllerMixins
+    include Web::Action
 
     def call(params)
       warden.logout

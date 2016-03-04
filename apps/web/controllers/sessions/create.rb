@@ -1,6 +1,6 @@
 module Web::Controllers::Sessions
   class Create
-    include ::ControllerMixins
+    include Web::Action
 
     def call(params)
       warden.authenticate!

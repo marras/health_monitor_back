@@ -1,15 +1,8 @@
-require 'controller_mixins'
-
 module Web::Controllers::Data
   class Create
-    include ::ControllerMixins
+    include Web::Action
 
     accept :json
-
-    use Warden::Manager do |manager|
-      manager.default_strategies :password
-      manager.failure_app = FailureApp
-    end
 
     def call(params)
       values = params[:values]

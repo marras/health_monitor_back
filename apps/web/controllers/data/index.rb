@@ -1,6 +1,6 @@
 module Web::Controllers::Data
   class Index
-    include ::ControllerMixins
+    include Web::Action
 
     expose :current_user
 

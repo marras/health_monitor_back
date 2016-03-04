@@ -212,8 +212,14 @@ module Web
       #
       # See: http://www.rubydoc.info/gems/hanami-controller#Configuration
       controller.prepare do
-        # include MyAuthentication # included in all the actions
-        # before :authenticate!    # run an authentication before callback
+        use Warden::Manager do |manager|
+          manager.default_strategies :password
+          manager.failure_app = FailureApp
+        end
+
+        def warden
+          @_env['warden']
+        end
       end
 
       # Configure the code that will yield each time Web::View is included

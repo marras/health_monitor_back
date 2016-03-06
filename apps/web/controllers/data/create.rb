@@ -4,6 +4,8 @@ module Web::Controllers::Data
 
     accept :json
 
+    before :require_login!
+
     def call(params)
       values = params[:values]
       user_id = params[:user]

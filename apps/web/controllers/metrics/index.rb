@@ -4,14 +4,9 @@ module Web::Controllers::Metrics
 
     expose :metrics
 
-    use Warden::Manager do |manager|
-      manager.default_strategies :password
-      manager.failure_app = FailureApp
-    end
+    before :require_login!
 
     def call(params)
-      warden.authenticate!
-      @current_user = warden.user
       @metrics = Metric.where(user_id: @current_user.id)
       self.format = :json
     end

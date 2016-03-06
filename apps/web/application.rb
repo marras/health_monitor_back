@@ -219,6 +219,11 @@ module Web
 
         expose :current_user
 
+        def require_login!
+          warden.authenticate!
+          @current_user = warden.user
+        end
+
         def warden
           @_env['warden']
         end

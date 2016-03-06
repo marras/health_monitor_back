@@ -2,10 +2,7 @@ module Web::Controllers::Data
   class Index
     include Web::Action
 
-    use Warden::Manager do |manager|
-      manager.default_strategies :password
-      manager.failure_app = FailureApp
-    end
+    before :require_login!
 
     def call(params)
       warden.authenticate!

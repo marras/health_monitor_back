@@ -131,7 +131,7 @@ module Web
         # See: http://hanamirb.org/guides/assets/compressors
         #
         # In order to skip JavaScript compression comment the following line
-        javascript_compressor :builtin
+        javascript_compressor :uglifier
 
         # Stylesheet compressor
         #
@@ -144,7 +144,7 @@ module Web
         # See: http://hanamirb.org/guides/assets/compressors
         #
         # In order to skip stylesheet compression comment the following line
-        stylesheet_compressor :builtin
+        stylesheet_compressor :uglifier
 
         # Specify sources for assets
         #

@@ -144,7 +144,7 @@ module Web
         # See: http://hanamirb.org/guides/assets/compressors
         #
         # In order to skip stylesheet compression comment the following line
-        stylesheet_compressor :uglifier
+        stylesheet_compressor :builtin
 
         # Specify sources for assets
         #

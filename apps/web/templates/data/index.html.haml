@@ -11,4 +11,9 @@
     - m.points.each do |p|
       = p.value
 
-.ct-chart.ct-perfect-fourth
+.wrapper{style: 'width: 400px; height: 300px'}
+  .ct-chart.ct-perfect-fourth
+
+-# TODO dodac wszystkie metryki na jednym grafie
+%script
+  window.data = { labels: #{labels}, series: [ #{series} ] };

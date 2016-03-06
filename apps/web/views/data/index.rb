@@ -3,7 +3,10 @@ module Web::Views::Data
     include Web::View
 
     def labels
-      raw points.map(&:day).to_json
+      raw points
+        .map(&:day)
+        .map { |d| d.strftime('%e %b') }
+        .to_json
     end
 
     def series

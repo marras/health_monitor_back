@@ -8,9 +8,8 @@ module Web::Controllers::Data
 
     def call(params)
       values = params[:values]
-      user_id = params[:user]
       values.each do |metric_name, value|
-        metric = Metric.find_or_create(name: metric_name, user_id: user_id)
+        metric = Metric.find_or_create(name: metric_name, user_id: current_user.id)
 
         point = Point.find(metric_id: metric.id, day: Date.today) || Point.new(metric_id: metric.id, day: Date.today)
         point.value = value.to_i

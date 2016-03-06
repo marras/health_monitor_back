@@ -1,6 +1,8 @@
-module Web::Controllers::Data
+module Web::Controllers::Metrics
   class Index
     include Web::Action
+
+    expose :metrics
 
     use Warden::Manager do |manager|
       manager.default_strategies :password
@@ -10,6 +12,8 @@ module Web::Controllers::Data
     def call(params)
       warden.authenticate!
       @current_user = warden.user
+      @metrics = Metric.where(user_id: @current_user.id)
+      self.format = :json
     end
   end
 end

@@ -217,6 +217,8 @@ module Web
           manager.failure_app = FailureApp
         end
 
+        expose :current_user
+
         def warden
           @_env['warden']
         end

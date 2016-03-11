@@ -11,9 +11,8 @@
     - m.points.each do |p|
       = p.value
 
-.wrapper{style: 'width: 400px; height: 300px'}
-  .ct-chart.ct-perfect-fourth
+.wrapper{style: 'width: 100%; height: 500px'}
+  .ct-chart
 
--# TODO dopasowac punkty w seriach do labelek (w razie gdyby jakichś brakowało) + sort by day!
 %script
   window.data = { labels: #{labels}, series: #{series} };

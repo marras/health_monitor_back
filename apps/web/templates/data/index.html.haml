@@ -14,6 +14,6 @@
 .wrapper{style: 'width: 400px; height: 300px'}
   .ct-chart.ct-perfect-fourth
 
--# TODO dodac wszystkie metryki na jednym grafie
+-# TODO dopasowac punkty w seriach do labelek (w razie gdyby jakichś brakowało) + sort by day!
 %script
-  window.data = { labels: #{labels}, series: [ #{series} ] };
+  window.data = { labels: #{labels}, series: #{series} };

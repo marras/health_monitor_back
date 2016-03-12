@@ -25,6 +25,10 @@ module Web::Views::Data
       end.to_json)
     end
 
+    def metric_names
+      current_user.metrics.map(&:name)
+    end
+
     private
 
     def dates
